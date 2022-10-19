@@ -240,3 +240,27 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+//render to the DOM
+const renderToDom = (divID, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+}
+
+const cardsOnDom = (array) => {
+  let domString = "";
+  for (const member of array) {
+    domString += `<div class="card" style="width: 18rem;">
+    <img src="${member.image}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">${member.name}</p>
+    </div>
+  </div>`;
+  }
+  renderToDom("#app", domString);
+}
+
+
+const filter = (array, colorString) => {
+  
+}
